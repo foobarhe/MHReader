@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		396D2F1A17D1F42E008BA568 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 396D2F1917D1F42E008BA568 /* HeaderView.xib */; };
 		397488B617CA105B000E55E9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397488B517CA105B000E55E9 /* UIKit.framework */; };
 		397488B817CA105B000E55E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397488B717CA105B000E55E9 /* Foundation.framework */; };
 		397488BA17CA105B000E55E9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397488B917CA105B000E55E9 /* CoreGraphics.framework */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		396D2F1917D1F42E008BA568 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		397488B217CA105B000E55E9 /* MHReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MHReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		397488B517CA105B000E55E9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		397488B717CA105B000E55E9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -102,16 +104,17 @@
 				39EA9E8A17CCE9BE007B95FB /* Feeds.storyboard */,
 				39EA9E8C17CCEAAF007B95FB /* IndexVC.h */,
 				39EA9E8D17CCEAAF007B95FB /* IndexVC.m */,
+				396D2F1917D1F42E008BA568 /* HeaderView.xib */,
 				399E82B217CCEBF100F47745 /* ArticleVC.h */,
 				399E82B317CCEBF100F47745 /* ArticleVC.m */,
 				397488C417CA105B000E55E9 /* AppDelegate.h */,
 				397488C517CA105B000E55E9 /* AppDelegate.m */,
 				399E82B517CCEDD900F47745 /* Settings.storyboard */,
-				397488BC17CA105B000E55E9 /* Supporting Files */,
 				399E82B717CCEF4B00F47745 /* Feed.h */,
 				399E82B817CCEF4B00F47745 /* Feed.m */,
 				399E82BA17CCEF6700F47745 /* Article.h */,
 				399E82BB17CCEF6700F47745 /* Article.m */,
+				397488BC17CA105B000E55E9 /* Supporting Files */,
 			);
 			path = MHReader;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				397488CC17CA105B000E55E9 /* Default-568h@2x.png in Resources */,
 				39EA9E8B17CCE9BE007B95FB /* Feeds.storyboard in Resources */,
 				399E82B617CCEDD900F47745 /* Settings.storyboard in Resources */,
+				396D2F1A17D1F42E008BA568 /* HeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,28 +12,33 @@
 
 @interface IndexVC ()
 
-@property (nonatomic, strong) NSMutableArray *entryAry;
+@property (nonatomic, strong) NSMutableArray *dataAry;
 
 @end
 
 @implementation IndexVC
 
-- (void)initEntryAry
+- (void)initData
 {
     Feed *f1 = [[Feed alloc] initWithId:@"1" name:@"互联网" url:@"http://it.com"];
     Article *f1a1 = [[Article alloc] initWithId:@"1" title:@"ffffff" fid:@"1" time:@"ssss" summary:@"summary" url:@"url"];
     Article *f1a2 = [[Article alloc] initWithId:@"1" title:@"ffffff" fid:@"1" time:@"ssss" summary:@"summary" url:@"url"];
-
+    NSArray *f1Articles = [[NSArray alloc] initWithObjects:f1a1, f1a2, nil];
+    NSArray *data1 = [[NSArray alloc] initWithObjects:f1, f1Articles, nil];
+    
     Feed *f2 = [[Feed alloc] initWithId:@"2" name:@"Android" url:@"http://it.com"];
     Article *f2a1 = [[Article alloc] initWithId:@"1" title:@"ffffff" fid:@"1" time:@"ssss" summary:@"summary" url:@"url"];
     Article *f2a2 = [[Article alloc] initWithId:@"1" title:@"ffffff" fid:@"1" time:@"ssss" summary:@"summary" url:@"url"];
+    NSArray *f2Articles = [[NSArray alloc] initWithObjects:f2a1, f2a2, nil];
+    NSArray *data2 = [[NSArray alloc] initWithObjects:f2, f2Articles, nil];
 
     Feed *f3 = [[Feed alloc] initWithId:@"3" name:@"雅虎" url:@"http://it.com"];
     Article *f3a1 = [[Article alloc] initWithId:@"1" title:@"ffffff" fid:@"1" time:@"ssss" summary:@"summary" url:@"url"];
     Article *f3a2 = [[Article alloc] initWithId:@"1" title:@"ffffff" fid:@"1" time:@"ssss" summary:@"summary" url:@"url"];
+    NSArray *f3Articles = [[NSArray alloc] initWithObjects:f3a1, f3a2, nil];
+    NSArray *data3 = [[NSArray alloc] initWithObjects:f3, f3Articles, nil];
     
-    self.entryAry = [[NSMutableArray alloc] initWithObjects:f1, f1a1, f1a2, f2, f2a1, f2a2, f3, f3a1, f3a2, nil];
-    
+    self.dataAry = [[NSMutableArray alloc] initWithObjects:data1, data2, data3, nil];
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -56,7 +61,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     self.title = @"News";
-    [self initEntryAry];
+    [self initData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -67,35 +72,56 @@
 
 #pragma mark - Table view data source
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    //using xib to define view
+    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"HeaderView" owner:self options:nil];
+    UIView *headerView = [nib objectAtIndex:0];
+    
+    Feed *feed = [[self.dataAry objectAtIndex:section] objectAtIndex:0];
+    UILabel *nameLabel = (UILabel *)[headerView viewWithTag:1];
+    nameLabel.text = feed.name;
+    
+    //seperator
+    CGRect sepFrame = CGRectMake(0, headerView.frame.size.height-1, 320, 1);
+    UIView *seperatorView = [[UIView alloc] initWithFrame:sepFrame];
+    seperatorView.backgroundColor = [UIColor colorWithWhite:224.0/255.0 alpha:1.0];
+    [headerView addSubview:seperatorView];
+    
+    return headerView;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 44;
+}
+
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return [self.dataAry count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.entryAry count];
+    return [[[self.dataAry objectAtIndex:section] objectAtIndex:1] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
+    static NSString *cellIdentifier = @"ArticleCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
-    id entry = [self.entryAry objectAtIndex:indexPath.row];
-    if ([entry isKindOfClass:[Feed class]]) {
-        cell.textLabel.text = ((Feed *)entry).name;
-    }
-    else {
-        cell.textLabel.text = ((Article *)entry).title;
-    }
+    Article *article = [[[self.dataAry objectAtIndex:[indexPath section]] objectAtIndex:1] objectAtIndex:indexPath.row];
+    
+    UILabel *titleLabel = (UILabel *) [cell viewWithTag:1];
+    titleLabel.text = article.title;
+    UILabel *summaryLabel = (UILabel *) [cell viewWithTag:2];
+    summaryLabel.text = article.summary;
     
     return cell;
 }
