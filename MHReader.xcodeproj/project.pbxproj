@@ -18,6 +18,8 @@
 		397488CA17CA105B000E55E9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 397488C917CA105B000E55E9 /* Default@2x.png */; };
 		397488CC17CA105B000E55E9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 397488CB17CA105B000E55E9 /* Default-568h@2x.png */; };
 		397488D317CA1185000E55E9 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 397488D217CA1185000E55E9 /* libsqlite3.dylib */; };
+		398FADF217D335F900CEF79E /* feeds.plist in Resources */ = {isa = PBXBuildFile; fileRef = 398FADF117D335F900CEF79E /* feeds.plist */; };
+		398FADF517D36C4700CEF79E /* Data.m in Sources */ = {isa = PBXBuildFile; fileRef = 398FADF417D36C4700CEF79E /* Data.m */; };
 		399E82B417CCEBF100F47745 /* ArticleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 399E82B317CCEBF100F47745 /* ArticleVC.m */; };
 		399E82B617CCEDD900F47745 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 399E82B517CCEDD900F47745 /* Settings.storyboard */; };
 		399E82B917CCEF4B00F47745 /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 399E82B817CCEF4B00F47745 /* Feed.m */; };
@@ -42,6 +44,9 @@
 		397488C917CA105B000E55E9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		397488CB17CA105B000E55E9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		397488D217CA1185000E55E9 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		398FADF117D335F900CEF79E /* feeds.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = feeds.plist; sourceTree = "<group>"; };
+		398FADF317D36C4700CEF79E /* Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
+		398FADF417D36C4700CEF79E /* Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Data.m; sourceTree = "<group>"; };
 		399E82B217CCEBF100F47745 /* ArticleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleVC.h; sourceTree = "<group>"; };
 		399E82B317CCEBF100F47745 /* ArticleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleVC.m; sourceTree = "<group>"; };
 		399E82B517CCEDD900F47745 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
@@ -101,14 +106,17 @@
 		397488BB17CA105B000E55E9 /* MHReader */ = {
 			isa = PBXGroup;
 			children = (
+				398FADF117D335F900CEF79E /* feeds.plist */,
+				398FADF317D36C4700CEF79E /* Data.h */,
+				398FADF417D36C4700CEF79E /* Data.m */,
+				397488C417CA105B000E55E9 /* AppDelegate.h */,
+				397488C517CA105B000E55E9 /* AppDelegate.m */,
 				39EA9E8A17CCE9BE007B95FB /* Feeds.storyboard */,
 				39EA9E8C17CCEAAF007B95FB /* IndexVC.h */,
 				39EA9E8D17CCEAAF007B95FB /* IndexVC.m */,
 				396D2F1917D1F42E008BA568 /* HeaderView.xib */,
 				399E82B217CCEBF100F47745 /* ArticleVC.h */,
 				399E82B317CCEBF100F47745 /* ArticleVC.m */,
-				397488C417CA105B000E55E9 /* AppDelegate.h */,
-				397488C517CA105B000E55E9 /* AppDelegate.m */,
 				399E82B517CCEDD900F47745 /* Settings.storyboard */,
 				399E82B717CCEF4B00F47745 /* Feed.h */,
 				399E82B817CCEF4B00F47745 /* Feed.m */,
@@ -192,6 +200,7 @@
 				39EA9E8B17CCE9BE007B95FB /* Feeds.storyboard in Resources */,
 				399E82B617CCEDD900F47745 /* Settings.storyboard in Resources */,
 				396D2F1A17D1F42E008BA568 /* HeaderView.xib in Resources */,
+				398FADF217D335F900CEF79E /* feeds.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +217,7 @@
 				399E82B417CCEBF100F47745 /* ArticleVC.m in Sources */,
 				399E82B917CCEF4B00F47745 /* Feed.m in Sources */,
 				399E82BC17CCEF6700F47745 /* Article.m in Sources */,
+				398FADF517D36C4700CEF79E /* Data.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>国际足坛</key>
+	<string>http://rss.sina.com.cn/sports/global/focus.xml</string>
+	<key>NBA</key>
+	<string>http://rss.sina.com.cn/sports/basketball/nba.xml</string>
+</dict>
+</plist>

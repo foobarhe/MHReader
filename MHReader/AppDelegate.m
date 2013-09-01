@@ -30,6 +30,11 @@
     NSArray *controllers = [NSArray arrayWithObjects:feedsNavVC, settingsVC, nil];
     tabVC.viewControllers = controllers;
     
+    NSString *fPath = [[NSBundle mainBundle] pathForResource:@"feeds" ofType:@"plist"];
+    NSString *aPath = [[NSBundle mainBundle] pathForResource:@"articles" ofType:@"plist"];
+    self.data = [[Data alloc] initWithFeedsPath:fPath ArticlePath:aPath];
+    [self.data fetchArticles];
+    
     self.window.rootViewController = tabVC;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

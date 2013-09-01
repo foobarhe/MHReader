@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Data.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, NSXMLParserDelegate>
 
+@property (strong, nonatomic) Data *data;
 @property (strong, nonatomic) UIWindow *window;
 
 @end
